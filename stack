@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int Stack[100] , put;
+
+void push(int x){
+	++put;
+	Stack[put]=x;
+}
+
+void pop(){
+	Stack[put] =0;
+	--put;
+}
+
+bool isEmpty(){
+	if(put >= 1) return false;
+	else return true;
+	
+}
+
+int top(){
+	return Stack[put];
+}
+
+int main(){
+	put = 0;
+	push(10);
+	push(10);
+	push(10);
+	pop();
+	push(10);
+	top();
+	for(int i=1;i<=3;i++){
+		cout<<Stack[i]<<"\n";
+	}
+	return 0;
+}
