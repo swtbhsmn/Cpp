@@ -1,38 +1,46 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int Stack[100] , put;
+int Stack[100] , ElementInSideInTheStack;
 
 void push(int x){
-	++put;
-	Stack[put]=x;
+	++ElementInSideInTheStack;
+	Stack[ElementInSideInTheStack]=x;
 }
 
 void pop(){
-	Stack[put] =0;
-	--put;
+	Stack[ElementInSideInTheStack] =0;
+	--ElementInSideInTheStack;
 }
 
-bool isEmpty(){
-	if(put >= 1) return false;
-	else return true;
+void isEmpty(){
+	if(ElementInSideInTheStack >= 1){
+		cout<<"false\n";
+	} 
+	else{
+		 cout<<"true\n";
+	}
 	
 }
 
 int top(){
-	return Stack[put];
+	return Stack[ElementInSideInTheStack];
 }
 
 int main(){
-	put = 0;
+	ElementInSideInTheStack = 0;
+	
 	push(10);
 	push(10);
 	push(10);
 	pop();
 	push(10);
 	top();
+	
 	for(int i=1;i<=3;i++){
 		cout<<Stack[i]<<"\n";
 	}
+	
+	isEmpty();
 	return 0;
 }
