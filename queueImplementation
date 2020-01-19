@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int elementPush=-1;//because we have to show queue is empty.
+int elementFront=0;
+int Queue[100];
+
+void push(int x){
+    ++elementPush;
+    Queue[elementPush]=x;
+}
+
+void pop(){
+    Queue[elementFront]=0;
+    ++elementFront;
+}
+
+bool isEmpty(){
+    if(elementPush<elementFront) return true;
+    else return false;
+}
+
+int frontValue(){
+    return Queue[elementFront];
+}
+
+int main(){
+
+push(10);
+push(20);
+pop();
+
+
+cout<<frontValue();
+
+
+return 0;
+}
