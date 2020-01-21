@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int FirstOccNoInSortedArray(int array[], int s ,int x){
+int left =0;
+    int result = -1;//If result not found it return -1;
+int right =s;
+while(left<=right){
+    int mid = (left+right)/2;
+
+    if(x==array[mid]){
+        result = mid;
+        left = mid+1;
+    }
+    else if(x<array[mid]){
+        right = mid-1;
+    }
+    else{
+        left = mid+1;
+    }
+
+}
+    return result;
+
+}
+int main(){
+    int array[]={12,23,56,65,69,89,91,91};
+    int size = sizeof(array)/sizeof(array[0]); 
+    cout<<FirstOccNoInSortedArray(array,size,91);
+    return 0;
+}
